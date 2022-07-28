@@ -34,44 +34,49 @@ date       || credit    || debit  || balance
 10/01/2023 || 1000.00   ||        || 1000.00
 ```
 
-
-
 ## EXAMPLES:
 
 - - - - - - - - - - - - - - - - - - - - - - - -- - - -
 
+```
 // a client makes a deposit of 1000 on 10-01-2023
 
 date       || credit  || debit || balance
 10/01/2023 || 1000.00 ||       || 1000.00
+```
 
 - - - - - - - - - - - - - - - - - -
 
+```
 // a deposit of 2000 on 13-01-2023
 
 date       || credit  || debit || balance
 13/01/2023 || 2000.00 ||       || 3000.00
 10/01/2023 || 1000.00 ||       || 1000.00
+```
 
 - - - - - - - - - - - - - - - - - -
 
+```
 // a withdrawal of 500 on 14-01-2023
 
 date       || credit  || debit  || balance
 14/01/2023 ||         || 500.00 || 2500.00
 13/01/2023 || 2000.00 ||        || 3000.00
 10/01/2023 || 1000.00 ||        || 1000.00
+```
 
 ## SCREENSHOT:
 
 ![](screenshots/bank_tech-test.png)
 
-## USAGE: 
+## USAGE:
 
 - run node
 - require file
 - example commands:
-```
+
+```javascript
   const statement = new Ledger()
   statement.credit(800);
   statement.credit(1300);
@@ -113,9 +118,6 @@ date       || credit  || debit  || balance
           - We will need to check if the input is actually a number, this can be an edge case for later
 - output should appear with most recent transactions first, and oldest last (this means that reverse should not be necessary)
 
-
-
-
 ## RESOURCES
 
 * Formatting:
@@ -140,7 +142,7 @@ https://stackoverflow.com/questions/12409299/how-to-get-current-formatted-date-d
 https://learn.co/lessons/hash-iteration#:~:text=When%20we%20iterate%20over%20a,manipulate%20either%20one%20or%20both.&text=Inside%20the%20iteration%20we%20have,the%20key%20and%20the%20value.
 
 
-* jest to contain: 
+* jest to contain:
 
 https://www.codegrepper.com/code-examples/javascript/jest+expect+string+to+contain+text
 

@@ -47,4 +47,9 @@ describe('Ledger', () => {
     expect(format).toEqual([{date: new Date().toLocaleDateString(), credit: 400, debit: 0, balance: 400}, {date: new Date().toLocaleDateString(), credit: 800, debit: 0, balance: 1200}, {date: new Date().toLocaleDateString(), credit: 0, debit: 500, balance: 700}])
   })
 
+  it('can store floats', () => {
+    ledger.credit(400.57)
+    expect(format).toEqual([{date: new Date().toLocaleDateString(), credit: 400.57, debit: 0, balance: 400.57}])
+  })
+
 })

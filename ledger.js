@@ -16,8 +16,10 @@ class Ledger {
   }
 
   formatReport(){
-    return (this.history)
+    return console.table(this.history)
   }
+  // formatting tool `console.table` will make all tests fail as will return undefined,
+  // should be removed to make tests pass
 }
 
 module.exports = Ledger;

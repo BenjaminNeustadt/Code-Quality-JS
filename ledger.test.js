@@ -13,10 +13,17 @@
 const Ledger = require('./ledger');
 
 describe('Ledger', () => {
-  
+
   it('formatReport method should return empty at first', () => {
     let ledger = new Ledger();
     expect(ledger.formatReport()).toEqual([]);
+  })
+
+  it('when account credited, returns report with headers: formatted date and increment balance', () => {
+    let ledger = new Ledger();
+    ledger.credit(100)
+    let format = ledger.formatReport();
+    expect(format).toEqual([{date: new Date().toLocaleDateString(), credit: 100, debit: 0, balance: 100}])
   })
 
 })

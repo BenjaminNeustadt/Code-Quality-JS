@@ -26,4 +26,11 @@ describe('Ledger', () => {
     expect(format).toEqual([{date: new Date().toLocaleDateString(), credit: 100, debit: 0, balance: 100}])
   })
 
+  it('when account debited, returns report with headers: formatted date and increment balance', () => {
+    let ledger = new Ledger();
+    ledger.debit(100)
+    let format = ledger.formatReport();
+    expect(format).toEqual([{date: new Date().toLocaleDateString(), credit: 0, debit: 100, balance: 100}])
+  })
+
 })

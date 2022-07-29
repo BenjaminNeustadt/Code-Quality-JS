@@ -19,7 +19,7 @@ class Ledger {
     return console.table(this.history)
   }
   // The formatting tool `console.table` will make all tests fail as will
-  // return 'undefined', should be removed to make tests pass
+  // return 'undefined', should be removed to make tests pass.
 }
 
 module.exports = Ledger;

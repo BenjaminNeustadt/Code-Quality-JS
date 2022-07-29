@@ -26,10 +26,16 @@ class Ledger {
   }
 
   formatReport(){
-    return (this.history)
+    const ledger = this.history.reverse().map(n => `${ Object.values(n).join(' || ') }`)
+    .join('\n')
+    return 'date || credit || debit || balance\n' + ledger
   }
-  // The formatting tool `console.table` will make all tests fail as will
-  // return 'undefined', should be removed to make tests pass.
 }
 
 module.exports = Ledger;
+
+const statement = new Ledger();
+statement.credit(150);
+// statement.credit(1300);
+// statement.debit(150);
+// console.log(statement.formatReport());

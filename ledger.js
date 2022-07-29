@@ -34,8 +34,8 @@ class Ledger {
 
 module.exports = Ledger;
 
-const statement = new Ledger();
-statement.credit(150);
-statement.credit(1300);
-statement.debit(150);
-console.log(statement.formatReport());
+// const statement = new Ledger();
+// statement.credit(150);
+// statement.credit(1300);
+// statement.debit(150);
+// console.log(statement.formatReport());

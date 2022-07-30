@@ -19,5 +19,8 @@ module.exports = Ledger;
 const transaction = new Transaction();
 transaction.credit(150);
 transaction.credit(1300);
+transaction.credit(600);
+transaction.debit(300);
+transaction.debit(100);
 const ledger = new Ledger(transaction);
 console.log(ledger.formatReport());

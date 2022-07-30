@@ -34,14 +34,6 @@ date       || credit    || debit  || balance
 10/01/2023 || 1000.00   ||        || 1000.00
 ```
 
-## EXAMPLES:
-
-- - - - - - - - - - - - - - - - - - - - - - - -- - - -
-
-## SCREENSHOT:
-
-![](screenshots/bank_tech-test.png)
-
 ## USAGE:
 
 - run node
@@ -49,9 +41,41 @@ date       || credit    || debit  || balance
 - example commands:
 
 ```javascript
-  const statement = new Ledger()
-  statement.credit(800);
-  statement.credit(1300);
-  statement.debit(200);
-  statement.formatReport();
+  const transaction = new Transaction();
+  transaction.credit(150);
+  transaction.credit(1300);
+  const ledger = new Ledger(transaction);
+  console.log(ledger.formatReport());
 ```
+
+## HOW TO USE
+
+1. Access node from command line
+
+`node`
+
+2. Require files in node
+```
+const Transaction = require('./transaction);
+```
+3. Initialise Transaction
+```
+const transaction = new Transaction();
+```
+4. Make event
+```
+transaction.credit(500);
+transaction.dedit(100);
+```
+5. Initialise Ledger with transaction as argument
+```
+const ledger = new Ledger(transaction);
+```
+6. Print with formatReport();
+```
+ledger.formatReport();
+```
+
+## SCREENSHOT:
+
+![](screenshots/bank_tech-test_2.png)

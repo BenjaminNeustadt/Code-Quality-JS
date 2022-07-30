@@ -1,32 +1,13 @@
+const Transaction = require('./transaction');
+
 class Ledger {
-  constructor(){
-    this.history = [];
+  constructor(transaction){
     this.date = new Date().toLocaleDateString();
-    this.balance = 0;
-  }
-
-  credit(amount){
-    this.balance += amount
-    this.history.push({
-      date: this.date,
-      credit: amount,
-      debit: 0,
-      balance: this.balance
-    })
-  }
-
-  debit(amount){
-    this.balance -= amount
-    this.history.push({
-      date: this.date,
-      credit: 0,
-      debit: amount,
-      balance: this.balance
-    })
+    this.transaction = transaction
   }
 
   formatReport(){
-    const ledger = this.history.reverse().map(n => `${ Object.values(n).join(' || ') }`)
+    const ledger = transaction.showAll().reverse().map(n => `${ Object.values(n).join(' || ') }`)
     .join('\n')
     return 'date || credit || debit || balance\n' + ledger
   }
@@ -34,8 +15,9 @@ class Ledger {
 
 module.exports = Ledger;
 
-// const statement = new Ledger();
-// statement.credit(150);
-// statement.credit(1300);
-// statement.debit(150);
-// console.log(statement.formatReport());
+
+const transaction = new Transaction();
+transaction.credit(150);
+transaction.credit(1300);
+const ledger = new Ledger(transaction);
+console.log(ledger.formatReport());

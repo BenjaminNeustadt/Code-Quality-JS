@@ -8,7 +8,7 @@ describe('Transaction', () => {
 
   describe('Credit', () => {
 
-    it('returns balance of 0 when amount undefined', () => {
+    xit('returns balance of 0 when amount undefined', () => {
       transaction = new Transaction();
       expect(transaction.credit()).toEqual({
         date: date,
@@ -18,7 +18,7 @@ describe('Transaction', () => {
       })
     })
 
-    it('returns balance of 50 when 50 is added', () => {
+    xit('returns balance of 50 when 50 is added', () => {
       transaction = new Transaction();
       expect(transaction.credit(50)).toEqual({
         date: date,
@@ -31,7 +31,7 @@ describe('Transaction', () => {
 
   describe('Debit', () => {
 
-    it('returns balance of -50 when 50 is deducted', () => {
+    xit('returns balance of -50 when 50 is deducted', () => {
       transaction = new Transaction();
       expect(transaction.debit(50)).toEqual({
         date: date,
